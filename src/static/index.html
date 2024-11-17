@@ -314,7 +314,7 @@
 
     // Define the list of label provider to customize the graph behavior:
     popoto.provider.node.Provider = {
-        "Name": {
+        "MyProfile": {
             "returnAttributes": ["Name", "GitHub", "Education", "LinkedIn", "Google_Scholar"],
             "constraintAttribute": "Name",
             "displayResults": function (pResultElmt) {
@@ -346,7 +346,7 @@
         },
         "Skill": {
             "returnAttributes": ["skill_name"],
-            "constraintAttribute": "skill_ame",
+            "constraintAttribute": "skill_name",
             "displayResults": function (pResultElmt) {
 
                 var tbody = pResultElmt.append("table").attr("class", "json-object").append("tbody");
@@ -362,7 +362,51 @@
                 }).append("tr");
                 borntr.append("th").text("MySkillName");
                 borntr.append("td").text(function (result) {
-                    return result.attributes.skill_born;
+                    return result.attributes.skill_name;
+                });
+            }
+        },
+        "Publication": {
+            "returnAttributes": ["title","abstract","authors","url"],
+            "constraintAttribute": "title",
+            "displayResults": function (pResultElmt) {
+
+                var tbody = pResultElmt.append("table").attr("class", "json-object").append("tbody");
+                var nametr = tbody.append("tr");
+                nametr.append("th").text("title");
+                nametr.append("td").text(function (result) {
+                    return result.attributes.title;
+                });
+
+                var borntr = tbody.filter(function (result) {
+                    // Filter on attribute having born attribute value
+                    return result.attributes.title;
+                }).append("tr");
+                borntr.append("th").text("title");
+                borntr.append("td").text(function (result) {
+                    return result.attributes.url;
+                });
+            }
+        },
+        "WorkExperience": {
+            "returnAttributes": ["company_name","date"],
+            "constraintAttribute": "company_name",
+            "displayResults": function (pResultElmt) {
+
+                var tbody = pResultElmt.append("table").attr("class", "json-object").append("tbody");
+                var nametr = tbody.append("tr");
+                nametr.append("th").text("company_name");
+                nametr.append("td").text(function (result) {
+                    return result.attributes.company_name;
+                });
+
+                var borntr = tbody.filter(function (result) {
+                    // Filter on attribute having born attribute value
+                    return result.attributes.company_name;
+                }).append("tr");
+                borntr.append("th").text("company_name");
+                borntr.append("td").text(function (result) {
+                    return result.attributes.date;
                 });
             }
         }
@@ -374,7 +418,7 @@
                 switch (link.label) {
                     case "HAS_SKILL":
                         return "#68BDF6";
-                    case "DIRECTED":
+                    case "USED_IN":
                         return "#6DCE9E";
                     case "PRODUCED":
                         return "#FF756E";

@@ -1,45 +1,5 @@
 # graphCV
 
-# postersession
-semantic search for conference posters
-
-### Websites
-- [Neurips](https://nips.cc/virtual/2023/papers.html?filter=titles)
-- [Neurips proceedings](https://papers.nips.cc/paper_files/paper/2023)
-- [ECCV proceedings](https://www.ecva.net/papers.php)
-- [ECCV poster page](https://eccv.ecva.net/virtual/2024/papers.html?filter=titles)
-- [CVPR proceedings](https://openaccess.thecvf.com/menu)
-
-### Scrape
-- Title
-- Authors
-- Abstract
-- Paper URL
-- Poster session
-- Main Paper
-- Supplement
-- Code
-- Poster PDF
-- Other auxilliary artifacts (video, audio)
-
-### Upcoming Conferences
-[website](https://aideadlin.es/?sub=ML,CV,CG,NLP,RO,SP,DM,AP,KR,HCI)
-- [Neurips 2025] December 10 - December 15
-- [ICLR 2025] April 24 - April 28
-- [NAACL 2025] April 29 - May 4
-- [CVPR 2025] June 10 - June 15
-
-### TODO
-- [ ] Scrape one Neurips paper
-- [ ] Scrape all Neurips papers from one year
-- [ ] Encoding of title, abstract, paper (VQA over graphs?)
-- [ ] Set up browser webpage for semantic search over papers, returning similarity results and poster session/id
-- [ ] Scrape all available information for current year and encode
-- [ ] Make an app (offline app? internet is often bad in conference centers)
-- [ ] Add data from an upcoming conference
-- [ ] Integrate graph search
-
-
 ### Getting started
 Clone the project repository to your local projects folder.
 ```
